@@ -9,7 +9,7 @@ def gene_height(pram):
     """
     flag = True
     line = random.randint(150, 300)
-    for people_line in people:
+    for people_line in pram:
         if line in people_line:
             flag = False
     if flag:
