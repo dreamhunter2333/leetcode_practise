@@ -31,5 +31,6 @@ class Solution:
             on.add(s[index])
         return max_len
 
+
 if __name__ == "__main__":
     print(Solution().lengthOfLongestSubstring('abccccccddddacc'))

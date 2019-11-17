@@ -21,5 +21,6 @@ class Solution:
                 return [nums_dict.get(num2),index]
             nums_dict[num] = index
 
+
 if __name__ == "__main__":
     print(Solution().twoSum(nums=[2, 7, 11, 15],target=9))
