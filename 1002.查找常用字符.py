@@ -76,5 +76,8 @@ class Solution:
                 return_list.append(key)
         return return_list
 
+
+if __name__ == "__main__":
+    print(Solution().commonChars(A=["bella","label","roller"]))
 # @lc code=end
 

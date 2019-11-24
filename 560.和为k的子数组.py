@@ -45,5 +45,9 @@ class Solution:
                 result += sum_list[num_sum - k]
             sum_list[num_sum] = sum_list.get(num_sum, 0) + 1
         return result
+
+
+if __name__ == "__main__":
+    print(Solution().subarraySum(nums=[1,1,1], k=2))
 # @lc code=end
 
