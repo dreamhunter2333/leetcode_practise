@@ -9,3 +9,6 @@ ports:
 tasks:
 - init: echo 'init script' # runs during prebuild
   command: echo 'start script'
+vscode:
+  extensions:
+    - shengchen.vscode-leetcode@0.15.7:RvOvslBsiRGYSsYtk3pz8A==
