@@ -45,6 +45,9 @@
 #
 
 # @lc code=start
+from typing import List
+
+
 class Solution:
     def commonChars(self, A: List[str]) -> List[str]:
         result = {}
