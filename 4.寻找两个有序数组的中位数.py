@@ -44,14 +44,31 @@ from typing import List
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         """
-        算法的时间复杂度不符合
+            https://leetcode.com/problems/median-of-two-sorted-arrays/discuss/2511
         """
-        nums = nums1 + nums2
-        nums.sort()
-        if len(nums) % 2 == 0:
-            return (nums[int(len(nums)/2)] + nums[int(len(nums)/2 - 1)])/2
+        def find_center_num(nums1: List[int], nums2: List[int], center: int) -> float:
+            if not nums1:
+                return nums2[center]
+            if not nums2:
+                return nums1[center]
+            center1, center2 = len(nums1) // 2, len(nums2) // 2
+            num1, num2 = nums1[center1], nums2[center2]
+            if center1 + center2 < center:
+                if num1 > num2:
+                    return find_center_num(nums1, nums2[center2+1:], center - center2 -1)
+                else:
+                    return find_center_num(nums1[center1+1:], nums2, center - center1 -1)
+            else:
+                if num1 > num2:
+                    return find_center_num(nums1[:center1], nums2, center)
+                else:
+                    return find_center_num(nums1, nums2[:center2], center)
+        nums_len = len(nums1) + len(nums2)
+        if nums_len % 2 == 0:
+            return (find_center_num(nums1, nums2, nums_len // 2) + 
+                find_center_num(nums1, nums2, nums_len // 2 - 1)) / 2
         else:
-            return nums[int((len(nums) - 1)/2)]
+            return find_center_num(nums1, nums2, nums_len // 2)
 
 
 if __name__ == "__main__":
