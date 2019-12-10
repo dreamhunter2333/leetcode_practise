@@ -46,8 +46,19 @@
 #
 
 # @lc code=start
+from typing import List
+
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        
+        """
+        https://leetcode.com/problems/word-break/discuss/43788
+        """
+        ok = [True]
+        for i in range(1, len(s)+1):
+            ok += any(ok[j] and s[j:i] in wordDict for j in range(i)),
+        return ok[-1]
+
+if __name__ == "__main__":
+    print(Solution().wordBreak(s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]))
 # @lc code=end
 
