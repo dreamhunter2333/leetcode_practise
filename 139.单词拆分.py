@@ -53,12 +53,14 @@ class Solution:
         """
         https://leetcode.com/problems/word-break/discuss/43788
         """
-        ok = [True]
+        flag_list = [True]
         for i in range(1, len(s)+1):
-            ok += any(ok[j] and s[j:i] in wordDict for j in range(i)),
-        return ok[-1]
+            # 判断 j 之前的字符串是否符合 wordDict, 如果 j - i 也符合 则 flag 为 True
+            flag_list += any(flag_list[j] and s[j:i] in wordDict for j in range(i)),
+        return flag_list[-1]
+
 
 if __name__ == "__main__":
-    print(Solution().wordBreak(s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]))
+    print(Solution().wordBreak(s="catsandog", wordDict=["cats", "dog", "sand", "and", "cat"]))
 # @lc code=end
 
