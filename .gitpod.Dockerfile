@@ -8,6 +8,7 @@ ENV SHELL=/bin/zsh
 RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && \
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 RUN echo 'zsh'  >>  ~/.bashrc && echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+RUN sed -i s/robbyrussell/ys/g ~/.zshrc
 RUN apt-get update -y && apt-get upgrade -y
 
 USER root
