@@ -78,6 +78,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution().commonChars(A=["bella","label","roller"]))
+    print(Solution().commonChars(A=["bella", "label", "roller"]))
 # @lc code=end
 
