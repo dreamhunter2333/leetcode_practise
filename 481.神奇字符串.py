@@ -47,21 +47,16 @@
 # @lc code=start
 class Solution:
     def magicalString(self, n: int) -> int:
-        s = '1'
-        flag = True
-        result = 0
-        for index in range(n):
-            if s[index] == '1':
-                s += '1' if flag else '2'
-            elif s[index] == '2':
-                s += '11' if flag else '22'
-            print(index)
-            index += 1
-            flag = not flag
-        print(s[:n])
-        return s[:n].count('1')
+        s = [1, 2 , 2]
+        for index in range(2, n):
+            s_last = 1 if s[-1] == 2 else 2
+            if s[index] == 1:
+                s.append(s_last)
+            else:
+                s.extend([s_last, s_last])
+        return s[:n].count(1)
 
 
 if __name__ == "__main__":
-    print(Solution().magicalString(3))
+    print(Solution().magicalString(5))
 # @lc code=end
