@@ -91,6 +91,7 @@ class Solution:
 
             # To transform line1 into the ideal line [i%2 for i ...],
             # we take the number of differences and divide by two
+            # TODO: 看不懂
             ans += min(sum((i-x) % 2 for i, x in enumerate(line1, start))
                        for start in starts) / 2
 
