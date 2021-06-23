@@ -18,10 +18,7 @@ class Solution:
             elif num == '/':
                 num2 = res.pop()
                 num1 = res.pop()
-                if num1 * num2 < 0:
-                    res.append(-(num1 // -num2))
-                else:
-                    res.append(num1 // num2)
+                res.append(int(num1 / num2))
             elif num == '*':
                 num2 = res.pop()
                 num1 = res.pop()
