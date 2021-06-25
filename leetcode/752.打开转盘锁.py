@@ -8,10 +8,6 @@
 from typing import List
 
 
-import sys
-sys.setrecursionlimit(10000000)
-
-
 class Solution:
     def openLock(self, deadends: List[str], target: str) -> int:
 
