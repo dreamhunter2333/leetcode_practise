@@ -24,6 +24,5 @@ class Solution:
         return max(dp)
 
 
-
 print(Solution().lengthOfLIS([0, 1, 0, 3, 2, 3]))
 # @lc code=end
