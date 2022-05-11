@@ -1,5 +1,8 @@
 {
     "recommendations": [
-        "do-something-right.do-something-right"
+        "do-something-right.do-something-right",
+        "leetcode.vscode-leetcode",
+        "golang.go",
+        "ms-python.python"
     ]
 }
