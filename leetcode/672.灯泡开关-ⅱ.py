@@ -25,13 +25,19 @@ class Solution:
                 if flag_arr[ttype](i):
                     stat[i] = reverse_map[stat[i]]
 
-        for i in range(0b10000):
-            press_arr = [
-                (1 if i & j > 0 else 0)
-                for j in (0b0001, 0b0010, 0b0100, 0b1000)
-            ]
-            if sum(press_arr) % 2 != presses % 2 or sum(press_arr) > presses:
-                continue
+        for press_arr in (
+            [i, j, k, p]
+            for i in range(2)
+            for j in range(2)
+            for k in range(2)
+            for p in range(2)
+            if (
+                i + j + k + p
+            ) % 2 == presses % 2 and (
+                i + j + k + p
+            ) <= presses
+        ):
+            print(press_arr)
             status = ["0"] * n
             for i, v in enumerate(press_arr):
                 if not v:
@@ -43,4 +49,4 @@ class Solution:
 
 
 # @lc code=end
-print(Solution().flipLights(3, 4))
+print(Solution().flipLights(3, 2))
