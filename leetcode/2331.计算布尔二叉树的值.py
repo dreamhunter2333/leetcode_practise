@@ -18,11 +18,10 @@ class TreeNode:
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
         def dfs(node: Optional[TreeNode]) -> bool:
-            if not node.left or not node.right:
-                return node.val == 1
-            if node.val == 2:
-                return dfs(node.left) or dfs(node.right)
-            else:
-                return dfs(node.left) and dfs(node.right)
+            match node.val:
+                case 1: return True
+                case 2: return dfs(node.left) or dfs(node.right)
+                case 3: return dfs(node.left) and dfs(node.right)
+                case _: return False
         return dfs(root)
 # @lc code=end
